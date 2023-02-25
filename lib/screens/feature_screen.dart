@@ -59,11 +59,11 @@ class _FeatureScreenState extends State<FeatureScreen>
       decoration: !isSelected
           ? BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: const Color(0xff84AEA4),
+              color: Theme.of(context).colorScheme.background,
             )
           : BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: const Color(0xffF1FAF8),
+              color: Theme.of(context).colorScheme.onBackground,
             ),
       child: child,
     );
@@ -78,16 +78,26 @@ class _FeatureScreenState extends State<FeatureScreen>
   @override
   Widget build(BuildContext context) {
     List<Widget> icons = [
-      Image.asset("assets/Predict.png"),
-      Image.asset("assets/Monitor.png"),
-      Image.asset("assets/FAQ.png"),
+      Image.asset(
+        "assets/Predict.png",
+        color: Theme.of(context).colorScheme.primaryContainer,
+      ),
+      Image.asset(
+        "assets/Monitor.png",
+        color: Theme.of(context).colorScheme.primaryContainer,
+      ),
+      Image.asset(
+        "assets/FAQ.png",
+        color: Theme.of(context).colorScheme.primaryContainer,
+      ),
     ];
     final pageWidth = MediaQuery.of(context).size.width;
     final pageHeight = MediaQuery.of(context).size.height;
     dynamic curTime;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xff84aea4),
+      // backgroundColor: const Color(0xff84aea4),
+      // backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
       body: WillPopScope(
         onWillPop: () {
           DateTime now = DateTime.now();
@@ -119,7 +129,7 @@ class _FeatureScreenState extends State<FeatureScreen>
         child: ClipRRect(
           borderRadius: BorderRadius.circular(35),
           child: Container(
-            color: const Color(0xff133B33),
+            color: Theme.of(context).colorScheme.secondaryContainer,
             child: TabBar(
               onTap: _onItemTapped,
               indicator: const UnderlineTabIndicator(
