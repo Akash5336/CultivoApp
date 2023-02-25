@@ -38,7 +38,10 @@ class FAQScreen extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          Image.asset("assets/FAQ_Page.png"),
+          Image.asset(
+            "assets/FAQ_Page.png",
+            // color: Theme.of(context).colorScheme.primary,
+          ),
           Expanded(
             child: NotificationListener<OverscrollIndicatorNotification>(
               onNotification: (notification) {

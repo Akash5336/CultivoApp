@@ -15,7 +15,10 @@ class CropInput extends StatelessWidget {
       children: [
         Text(
           title,
-          style: GoogleFonts.inter(fontSize: 18),
+          style: GoogleFonts.inter(
+            fontSize: 18,
+            color: Theme.of(context).colorScheme.onSecondaryContainer,
+          ),
         ),
         Container(
           padding: EdgeInsets.only(top: pageHeight * 0.011),
@@ -26,22 +29,28 @@ class CropInput extends StatelessWidget {
             keyboardType: TextInputType.number,
             textInputAction: TextInputAction.next,
             style: GoogleFonts.inter(
-              fontSize: 20,
-              color: Colors.white,
+              fontSize: 18,
+              // color: Colors.white,
+              color: Theme.of(context).colorScheme.onSecondaryContainer,
             ),
             decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(
-                  vertical: pageHeight * 0.005, horizontal: pageWidth * 0.02,),
+                // vertical: pageHeight * 0.001,
+                horizontal: pageWidth * 0.02,
+              ),
               filled: true,
-              fillColor: const Color(0xff84AEA4),
-              enabledBorder: const OutlineInputBorder(
+              // fillColor: const Color(0xff84AEA4),
+              fillColor: Theme.of(context).colorScheme.primaryContainer,
+              enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Color(0xff84AEA4),
+                  // color: Color(0xff84AEA4),
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              focusedBorder: const OutlineInputBorder(
+              focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Color(0xff84AEA4),
+                  // color: Color(0xff84AEA4),
+                  color: Theme.of(context).colorScheme.onTertiaryContainer,
                 ),
               ),
             ),

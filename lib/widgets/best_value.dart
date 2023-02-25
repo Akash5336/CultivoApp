@@ -70,16 +70,17 @@ class _BestCropState extends State<BestCrop> {
 
     return SafeArea(
       child: _isLoading
-          ? const Center(
+          ? Center(
               child: CircularProgressIndicator(
-                color: Color(0xff123A32),
+                // color: Color(0xff123A32),
+                color: Theme.of(context).colorScheme.secondaryContainer,
               ),
             )
           : Column(
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    top: pageHeight * 0.031,
+                    top: pageHeight * 0.015,
                     left: pageWidth * 0.178,
                     right: pageWidth * 0.178,
                   ),
@@ -87,14 +88,14 @@ class _BestCropState extends State<BestCrop> {
                     "Best Crop Values",
                     style: GoogleFonts.inter(
                       fontSize: 30,
-                      color: const Color(0xff123A32),
+                      // color: const Color(0xff123A32),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: pageHeight * 0.017,
+                    top: pageHeight * 0.008,
                     left: pageWidth * 0.097,
                     right: pageWidth * 0.097,
                   ),
@@ -105,7 +106,8 @@ class _BestCropState extends State<BestCrop> {
                         top: pageHeight * 0.04, left: pageWidth * 0.05),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: const Color(0xff65998D),
+                      // color: const Color(0xff65998D),
+                      color: Theme.of(context).colorScheme.secondaryContainer,
                       boxShadow: [
                         BoxShadow(
                           offset: const Offset(0, 4),
@@ -123,6 +125,9 @@ class _BestCropState extends State<BestCrop> {
                           "Enter Crop:",
                           style: GoogleFonts.inter(
                             fontSize: 20,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onSecondaryContainer,
                           ),
                         ),
                         Padding(
@@ -134,7 +139,10 @@ class _BestCropState extends State<BestCrop> {
                               controller: _cropController,
                               style: GoogleFonts.inder(
                                 fontSize: 20,
-                                color: Colors.white,
+                                // color: Colors.white,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onSecondaryContainer,
                               ),
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.symmetric(
@@ -142,15 +150,24 @@ class _BestCropState extends State<BestCrop> {
                                   horizontal: pageWidth * 0.02,
                                 ),
                                 filled: true,
-                                fillColor: const Color(0xff84AEA4),
-                                enabledBorder: const OutlineInputBorder(
+                                // fillColor: const Color(0xff84AEA4),
+                                fillColor: Theme.of(context)
+                                    .colorScheme
+                                    .primaryContainer,
+                                enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Color(0xff84AEA4),
+                                    // color: Color(0xff84AEA4),
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onPrimaryContainer,
                                   ),
                                 ),
-                                focusedBorder: const OutlineInputBorder(
+                                focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Color(0xff84AEA4),
+                                    // color: Color(0xff84AEA4),
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onTertiaryContainer,
                                   ),
                                 ),
                               ),
@@ -166,12 +183,12 @@ class _BestCropState extends State<BestCrop> {
                             height: pageHeight * 0.0575,
                             width: pageWidth * 0.580,
                             child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(9),
-                                ),
-                                backgroundColor: const Color(0xff133B33),
-                              ),
+                              // style: ElevatedButton.styleFrom(
+                              //   shape: RoundedRectangleBorder(
+                              //     borderRadius: BorderRadius.circular(9),
+                              //   ),
+                              //   backgroundColor: const Color(0xff133B33),
+                              // ),
                               onPressed: () {
                                 if (_cropController.text.isEmpty) {
                                   showDialog(
@@ -237,7 +254,7 @@ class _BestCropState extends State<BestCrop> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: pageHeight * 0.08125),
+                          margin: EdgeInsets.only(top: pageHeight * 0.075),
                           width: pageWidth * 0.705,
                           height: pageHeight * 0.448,
                           padding: EdgeInsets.symmetric(
@@ -245,7 +262,11 @@ class _BestCropState extends State<BestCrop> {
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            color: const Color(0xffB9C6C3).withOpacity(0.55),
+                            // color: const Color(0xffB9C6C3).withOpacity(0.55),
+                            color: Theme.of(context)
+                                .colorScheme
+                                .primary
+                                .withOpacity(0.7),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -260,7 +281,10 @@ class _BestCropState extends State<BestCrop> {
                                     result,
                                     style: GoogleFonts.inter(
                                       fontSize: 28,
-                                      color: const Color(0xff123A32),
+                                      // color: const Color(0xff123A32),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimary,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -306,7 +330,8 @@ class ResultText extends StatelessWidget {
         textAlign: TextAlign.left,
         style: GoogleFonts.inter(
           fontSize: 20,
-          color: const Color(0xff123A32),
+          // color: const Color(0xff123A32),
+          color: Theme.of(context).colorScheme.onPrimary,
           fontWeight: FontWeight.w500,
         ),
       ),

@@ -38,12 +38,16 @@ class _FAQTileState extends State<FAQTile> {
           title: Text(
             widget.question,
             style: GoogleFonts.inter(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: const Color(0xff123A32),),
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: const Color(0xff123A32),
+            ),
           ),
           backgroundColor: const Color(0xffA9DBCF),
-          collapsedBackgroundColor: const Color(0xff65998D),
+          collapsedBackgroundColor:
+              Theme.of(context).colorScheme.primaryContainer,
+          // collapsedBackgroundColor: const Color(0xff65998D),
+
           trailing: !_tileExpanded
               ? Image.asset("assets/arrow_icon_down.png")
               : Image.asset("assets/arrow_icon_up.png"),
